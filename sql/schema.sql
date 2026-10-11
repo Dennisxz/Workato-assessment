@@ -36,7 +36,6 @@ CREATE TABLE dept_manager (
     from_date DATE NOT NULL,
     to_date DATE NOT NULL,
     PRIMARY KEY (emp_no, dept_no),
-    FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
     FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
 
@@ -56,12 +55,5 @@ CREATE TABLE titles (
     to_date DATE,
     PRIMARY KEY (emp_no, title, from_date),
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
-);
-
-CREATE TABLE dept_manager_staging (
-    emp_no INT NOT NULL,
-    dept_no CHAR(4) NOT NULL,
-    from_date DATE NOT NULL,
-    to_date DATE NOT NULL
 );
 
